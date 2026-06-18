@@ -1,0 +1,35 @@
+{
+    "id": "plugin.com.pot-app.aliyun-ocr",
+    "plugin_type": "recognize",
+    "icon": "icon.png",
+    "display": "阿里云OCR",
+    "homepage": "https://github.com/saillill/pot-app-recognize-plugin-aliyun-ocr",
+    "needs": [
+        {
+            "key": "appCode",
+            "display": "AppCode",
+            "type": "input"
+        }
+    ],
+    "language": {
+        "auto": "auto",
+        "zh_cn": "chi_sim",
+        "zh_tw": "chi_tra",
+        "en": "eng",
+        "ja": "jpn",
+        "ko": "kor",
+        "fr": "fre",
+        "es": "spa",
+        "ru": "rus",
+        "de": "ger",
+        "it": "ita",
+        "tr": "tur",
+        "pt_pt": "por",
+        "pt_br": "por",
+        "vi": "vie",
+        "th": "tai",
+        "ar": "ara",
+        "hi": "hin",
+        "fa": "per"
+    }
+}
