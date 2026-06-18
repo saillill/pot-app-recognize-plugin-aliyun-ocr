@@ -22,10 +22,10 @@
 
 ## API说明
 
-- **接口地址**: `https://ocrapi-advanced.taobao.com/ocrservice/advanced`
+- **接口地址**: `https://tysbgpu.market.alicloudapi.com/api/predict/ocr_general`
 - **请求方式**: POST
 - **认证方式**: `Authorization: APPCODE <AppCode>`
-- **文档参考**: [阿里云OCR高精版API](https://market.aliyun.com/products/57124001/cmapi028554.html)
+- **文档参考**: [阿里云OCR云市场API](https://market.aliyun.com/detail/cmapi028554#sku=yuncode22554000016)
 
 ## 开发
 
