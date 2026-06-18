@@ -38,24 +38,15 @@ async function recognize(base64, lang, options) {
 
     if (res.ok) {
         const result = res.data;
-        // 尝试多种可能的返回格式
-        if (result && result.content) {
-            return result.content;
+        if (result && result.ret) {
+            // API返回格式: {"success":true, "ret":[{"word":"...", "prob":..., "rect":{...}},...]}
+            const texts = result.ret.map(item => item.word).filter(Boolean);
+            if (texts.length > 0) {
+                return texts.join('\n');
+            }
+            throw "API未识别到文字";
         }
-        if (result && result.data && result.data.content) {
-            return result.data.content;
-        }
-        if (result && result.words_result) {
-            // 拼接所有识别到的文字
-            return result.words_result.map(item => item.words || item.word).filter(Boolean).join('\n');
-        }
-        if (result && result.prism_wordsInfo) {
-            return result.prism_wordsInfo.map(item => item.word).filter(Boolean).join('\n');
-        }
-        if (typeof result === 'string') {
-            return result;
-        }
-        throw `API返回异常，未知格式: ${JSON.stringify(result)}`;
+        throw `API返回异常: ${JSON.stringify(result)}`;
     } else {
         throw `HTTP请求错误\n状态码: ${res.status}\n${JSON.stringify(res.data)}`;
     }
